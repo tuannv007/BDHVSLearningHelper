@@ -245,45 +245,20 @@ Phần HTML câu hỏi/đáp án vẫn còn TODO trong `site-adapter.js`. Khi ch
 extension vẫn bấm Play và tua/phát tới mốc, rồi pause và báo **Chờ cập nhật HTML**;
 không đánh dấu câu hỏi đã trả lời hay tự chuyển qua câu chưa được xử lý.
 
-### Một câu hỏi/video bị treo không còn dừng cả lượt chạy — chờ tối đa 15 giây
+### Cơ chế tự động làm mới & phục hồi khi chạy (Thay thế việc chờ 15 giây rồi bỏ qua)
 
-Vòng lặp chính trong `content.js` (`start()`) tự bỏ qua một bước bị treo ở
-ba loại bước lặp lại nhiều lần trong một lượt chạy: `answerQuestion` (một
-câu hỏi trong video — kể cả lúc chờ bảng câu hỏi xuất hiện, chưa tới lúc
-chọn đáp án), `skipVideoToEnd` (một video không có câu hỏi) và `openVideo`
-(chuyển sang một tab video khác). Gặp đúng ba loại bước này, extension chỉ
-chờ **tối đa 15 giây** cho bước đó xong — dù bên trong nó còn bao nhiêu lớp
-chờ lồng nhau với ngân sách riêng dài hơn nhiều (30-90 giây tuỳ chỗ, xem
-mục "Thống kê thời gian chờ" nếu cần chi tiết) — rồi ghi cảnh báo ra console
-(không gửi thông báo lỗi nào tới popup) và coi như xong bước đó, chuyển
-ngay sang bước tiếp theo. Lượt chạy tiếp tục thay vì dừng hẳn và báo **Có
-lỗi**. Mốc 15 giây này nằm ở đúng một chỗ (`STEP_TIMEOUT_MS` trong
-`content.js`) thay vì phải hạ từng ngân sách chờ lồng bên trong — hễ bước đó
-chưa xong khi tới mốc, phần đang dở (chờ DOM, lệnh gửi vào iframe YouTube...)
-đều bị huỷ ngay theo đúng cách Stop vẫn huỷ, chứ không chạy ngầm tiếp trong
-lúc extension đã chuyển sang bước kế.
+Trước đây, khi một bước video hoặc câu hỏi gặp trục trặc tải chậm, extension dùng mốc chờ mù quáng 15 giây rồi tự động bỏ qua bước đó (`STEP_TIMEOUT_MS`). Cách làm này dễ dẫn đến việc bỏ sót câu hỏi hoặc cắt ngang khi video đang nạp dở trên máy yếu/mạng lag.
 
-Cơ chế này cố tình giới hạn ở ba loại bước trên, không áp dụng cho các bước
-mở bài/điều hướng trang/bài kiểm tra Module/bài kiểm tra cuối khoá — ở
-những bước đó, timeout thường có nghĩa trang chưa thật sự vào đúng chỗ run
-đang cần, nên vẫn dừng lại và báo lỗi như trước (với ngân sách chờ gốc,
-không bị rút xuống 15 giây) để không âm thầm bỏ qua cả một phần lớn khóa
-học.
+Hiện tại, extension đã chuyển hoàn toàn sang **hướng làm mới và phục hồi chủ động (Active Refresh & Watchdog Recovery)**:
 
-**Một ranh giới trước đây có, giờ không còn áp dụng được nữa**: bên trong
-`answerQuestion` từng có quy tắc riêng — nếu chờ đủ ~30 giây mà
-`data-attempts-used` xác nhận đáp án **chưa hề được ghi nhận**, lỗi đó vẫn
-dừng cả lượt chạy thay vì bỏ qua, để một câu hỏi thật sự chưa từng được trả
-lời không bị âm thầm coi là xong. Vì quy tắc đó cần đủ ~30 giây mới xác định
-được, mà mốc 15 giây mới luôn cắt ngang trước khi đủ thời gian đó, ranh giới
-này gần như không còn cơ hội áp dụng trong thực tế nữa — mọi timeout ở ba
-loại bước trên, kể cả trường hợp câu hỏi thật sự chưa từng được trả lời,
-giờ đều bị bỏ qua sau tối đa 15 giây.
-
-Vì lỗi loại này không còn được báo về nữa, dấu vết duy nhất còn lại là dòng
-cảnh báo trong console của trang (mở DevTools, tab Console) — cần thiết nếu
-sau này muốn biết một lượt chạy "Hoàn tất" thực ra đã bỏ qua bao nhiêu
-câu/video.
+1. **Tự động cuộn khung nhìn (`scrollIntoView`):**
+   Mỗi khi chuyển tab video hoặc kết nối player, hệ thống tự động cuộn khung player và bảng câu hỏi vào chính giữa tầm mắt màn hình. Thao tác này lập tức đánh thức trình duyệt khỏi cơ chế *Off-screen Throttling* (ngủ đông iframe ngoài màn hình), buộc Chrome/Edge ưu tiên nạp video ngay tức thì.
+2. **Kích hoạt kết nối sớm (`document_end`):**
+   `youtube-frame.js` được nạp ngay khi khung DOM YouTube vừa dựng xong, không phải chờ `document_idle` tải hết các dữ liệu nặng (ảnh bìa, quảng cáo, analytics), giúp việc bắt tay giữa trang web và player diễn ra gần như tức thì.
+3. **Cơ chế Watchdog Heartbeat thông minh:**
+   Không còn cắt ngang bước sau 15 giây cố định. Thay vào đó, bộ giám sát liên tục nhận tín hiệu sống (`signal.heartbeat()`) mỗi khi video phát, tua vị trí hoặc DOM có tương tác. Chỉ khi bước bị **đơ hoàn toàn không có bất kỳ tiến triển nào** trong suốt 35 giây thì cơ chế an toàn mới can thiệp.
+4. **Tự động thử lại và làm mới kết nối (Retry & Refresh):**
+   Quá trình kết nối player YouTube được nâng lên tới 20 lần thử (~30 giây), cứ sau 3 lần thử lại tự động căn chỉnh lại vị trí cuộn màn hình để phục hồi kết nối thành công, đảm bảo mọi câu hỏi đều được trả lời đầy đủ thay vì bị bỏ qua.
 
 ## Kiểm tra
 
