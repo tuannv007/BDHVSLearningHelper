@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bình dân học vụ số</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <span class="eyebrow">BÌNH DÂN HỌC VỤ SỐ</span>
+            <h1><span id="course-title">Khóa học</span> <span id="course-code" class="badge" hidden></span></h1>
+            <a id="course-link" target="_blank" rel="noopener noreferrer">Mở trang khóa học ↗</a>
+            <label id="course-picker" hidden>Khóa học
+                <select id="course-select" aria-label="Chọn khóa học"></select>
+            </label>
+        </header>
+        <details class="guide-box">
+            <summary>📖 Hướng dẫn sử dụng & Cài đặt tiện ích</summary>
+            <div class="guide-steps">
+                <div><strong>1. Mở tiện ích:</strong> Vào <code>edge://extensions</code> hoặc <code>chrome://extensions</code></div>
+                <div><strong>2. Bật Dev Mode:</strong> Gạt công tắc <em>Chế độ dành cho nhà phát triển</em> sang <b>BẬT (ON)</b></div>
+                <div><strong>3. Tải tiện ích:</strong> Bấm <em>Tải phần mở rộng đã giải nén (Load unpacked)</em> ➔ Chọn thư mục tiện ích</div>
+                <div><strong>4. Ghim icon 📌:</strong> Bấm biểu tượng mảnh ghép 🧩 ➔ Ghim 🎓 lên thanh công cụ</div>
+                <div><strong>5. Tự động học:</strong> Chọn bài bên dưới ➔ Nhấn <b>▶ Start</b> để bắt đầu</div>
+            </div>
+        </details>
+        <section aria-labelledby="lessons-heading">
+            <div class="section-heading">
+                <h2 id="lessons-heading">Chọn bài học</h2>
+                <label class="select-all" id="select-all-wrap">
+                    <input type="checkbox" id="select-all" aria-label="Chọn tất cả bài học và bài ôn tập">
+                    Chọn tất cả
+                </label>
+            </div>
+            <div id="lesson-list" class="lesson-list"></div>
+            <p id="selection-summary" class="muted">Đang tải dữ liệu…</p>
+        </section>
+        <section class="status-card" aria-label="Tiến độ" aria-live="polite">
+            <div class="status-heading"><span id="status-dot" class="dot"></span><strong id="status-text">Sẵn sàng</strong></div>
+            <p id="status-detail">Chọn các bài muốn chạy, rồi nhấn Start.</p>
+            <progress id="run-progress" value="0" max="1" aria-label="Số câu hỏi video đã xử lý"></progress>
+            <span id="progress-text" class="muted">0 câu hỏi đã xử lý</span>
+        </section>
+        <section class="logs-card" aria-label="Nhật ký tiến trình" id="logs-card">
+            <div class="logs-heading">
+                <span class="logs-title">📋 Nhật ký tiến trình</span>
+                <span id="logs-count" class="muted">0 bước</span>
+            </div>
+            <div id="logs-list" class="logs-list">
+                <p class="muted empty-logs">Chưa có nhật ký nào. Nhấn Start để bắt đầu.</p>
+            </div>
+        </section>
+        <p id="error-message" role="alert" hidden></p>
+        <div class="controls">
+            <button id="btn-start" class="btn primary" disabled>▶ Start</button>
+            <button id="btn-stop" class="btn stop" disabled>■ Stop</button>
+        </div>
+        <p class="hint">Có thể chọn nhiều bài; Start sẽ chạy lần lượt theo đúng thứ tự Bài 1 → Bài 7 rồi đến bài ôn tập, mỗi bài cách nhau 3 giây.<br>Start chạy từ đầu; đóng popup vẫn tiếp tục.<br>Nút "Chỉ ôn tập" bên cạnh mỗi bài: mở sẵn đúng trang Ôn tập Module của bài đó rồi bấm, để chỉ làm riêng bài ôn tập, không học lại video.</p>
+    </main>
+    <script src="course-runner.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>

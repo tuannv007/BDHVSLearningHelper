@@ -1,0 +1,170 @@
+:root {
+    color-scheme: dark;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    color: #e8edf5;
+    background: #0f172a;
+}
+* { box-sizing: border-box; }
+body { margin: 0; width: 380px; max-height: 600px; overflow-y: auto; }
+.container { padding: 16px; }
+header { padding-bottom: 16px; }
+.eyebrow { font-size: 10px; letter-spacing: 1.5px; color: #93a4be; font-weight: 700; }
+h1 { margin: 7px 0 9px; font-size: 21px; letter-spacing: -.4px; }
+.badge { font-size: 11px; color: #a8ceff; background: #203858; padding: 4px 6px; border-radius: 5px; vertical-align: middle; }
+a { color: #94c4ff; text-decoration: none; font-size: 12px; }
+a:hover { text-decoration: underline; }
+#course-picker { margin-top: 12px; color: #b3c0d4; font-size: 12px; }
+#course-picker:not([hidden]) { display: block; }
+#course-select { display: block; width: 100%; margin-top: 5px; padding: 7px; background: #172237; color: #e8edf5; border: 1px solid #40516a; border-radius: 6px; }
+h2 { margin: 0; font-size: 14px; }
+.section-heading { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.select-all { display: flex; align-items: center; gap: 5px; font-size: 12px; color: #b3c0d4; cursor: pointer; }
+.select-all:has(input:disabled) { cursor: default; opacity: .6; }
+input[type="radio"], input[type="checkbox"] { accent-color: #68a7ff; width: 16px; height: 16px; margin: 0; cursor: pointer; flex-shrink: 0; }
+.lesson-list { display: grid; gap: 6px; max-height: 200px; overflow-y: auto; scrollbar-width: thin; }
+.lesson-row { display: flex; align-items: stretch; gap: 6px; }
+.lesson { flex: 1; display: flex; align-items: center; gap: 11px; padding: 8px 12px; border: 1px solid #2b384e; border-radius: 8px; background: #172237; cursor: pointer; min-width: 0; }
+.lesson:has(input:checked) { background: #1b3150; border-color: #518ccc; }
+.lesson:has(input:disabled) { cursor: default; }
+.lesson-title { font-weight: 600; }
+.lesson-meta { margin-left: auto; color: #aebdd1; font-size: 11px; }
+.lesson-test-only { flex-shrink: 0; padding: 0 10px; border: 1px solid #40516a; border-radius: 8px; background: #1c2c44; color: #a8ceff; font-size: 11px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.lesson-test-only:hover:not(:disabled) { background: #24395a; }
+.lesson-test-only:disabled { opacity: .4; cursor: not-allowed; }
+.muted { color: #a6b5ca; font-size: 12px; }
+#selection-summary { margin: 10px 0 16px; }
+.status-card { background: #182539; border: 1px solid #2c3b51; border-radius: 10px; padding: 13px; }
+.status-heading { display: flex; align-items: center; gap: 8px; }
+.dot { height: 8px; width: 8px; border-radius: 50%; background: #94a3b8; flex-shrink: 0; }
+.dot.running { background: #60a5fa; box-shadow: 0 0 8px #60a5fa70; }
+.dot.completed { background: #4ade80; }
+.dot.error, .dot.needsConfig { background: #fbbf24; }
+#status-detail { font-size: 12px; color: #c1cde0; line-height: 1.5; margin: 8px 0 10px; overflow-wrap: anywhere; }
+progress { display: block; width: 100%; height: 6px; margin-bottom: 8px; border: 0; border-radius: 8px; accent-color: #60a5fa; }
+progress::-webkit-progress-bar { background: #304059; border-radius: 8px; }
+progress::-webkit-progress-value { background: #60a5fa; border-radius: 8px; }
+.controls { display: flex; gap: 10px; margin-top: 16px; }
+.btn { flex: 1; padding: 11px; border: 1px solid transparent; border-radius: 8px; color: white; font: 600 14px "Segoe UI", sans-serif; cursor: pointer; }
+.primary { background: #2563eb; }
+.primary:hover:not(:disabled) { background: #3574f5; }
+.stop { background: #452632; border-color: #764050; color: #ffc1c1; }
+.stop:hover:not(:disabled) { background: #62303e; }
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+:focus-visible { outline: 2px solid #9ac5ff; outline-offset: 3px; }
+.hint { margin: 12px 0 0; color: #93a4be; font-size: 11px; line-height: 1.6; }
+#error-message { color: #ffb8b8; font-size: 12px; line-height: 1.5; }
+
+.logs-card {
+    background: #182539;
+    border: 1px solid #2c3b51;
+    border-radius: 10px;
+    padding: 13px;
+    margin-top: 12px;
+}
+.logs-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+.logs-title {
+    font-weight: 600;
+}
+.logs-list {
+    max-height: 180px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.empty-logs {
+    margin: 6px 0;
+    font-size: 11px;
+}
+.log-group-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #93c5fd;
+    padding: 4px 6px;
+    background: #101c2d;
+    border-radius: 4px;
+    margin-top: 4px;
+}
+.log-entry {
+    padding: 5px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    line-height: 1.4;
+    display: flex;
+    gap: 6px;
+}
+.log-entry.success {
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.08);
+}
+.log-entry.running {
+    color: #60a5fa;
+    background: rgba(96, 165, 250, 0.1);
+}
+.log-entry.skipped {
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.08);
+}
+.log-entry.error {
+    color: #f87171;
+    background: rgba(248, 113, 113, 0.15);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+    flex-direction: column;
+}
+.log-entry-icon {
+    flex-shrink: 0;
+    font-weight: bold;
+}
+.log-entry-desc {
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+.log-entry-detail {
+    color: #fca5a5;
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+.guide-box {
+    background: #182539;
+    border: 1px solid #334e68;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    font-size: 12px;
+}
+.guide-box summary {
+    font-weight: 600;
+    color: #93c5fd;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+}
+.guide-box summary:hover {
+    color: #bfdbfe;
+}
+.guide-steps {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    line-height: 1.45;
+    color: #cbd5e1;
+    font-size: 11.5px;
+}
+.guide-steps code {
+    background: #0f172a;
+    padding: 1px 4px;
+    border-radius: 4px;
+    color: #38bdf8;
+    font-size: 11px;
+}
+

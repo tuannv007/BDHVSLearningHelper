@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "Bình dân học vụ số · Bắc Ninh",
+  "version": "3.3.0",
+  "description": "Tự động học tập khóa học Bắc Ninh, mở video bài giảng và xử lý câu hỏi theo data.json.",
+  "minimum_chrome_version": "92",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_title": "Bình dân học vụ số",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://binhdanhocvuso.gov.vn/*",
+    "https://www.youtube.com/embed/*",
+    "https://www.youtube-nocookie.com/embed/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://binhdanhocvuso.gov.vn/*"
+      ],
+      "js": [
+        "course-runner.js",
+        "site-adapter.js",
+        "media-player.js",
+        "actions/open-lesson-video.js",
+        "actions/open-video-tab.js",
+        "actions/play-video.js",
+        "actions/answer-lesson-test.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.youtube.com/embed/*",
+        "https://www.youtube-nocookie.com/embed/*"
+      ],
+      "js": [
+        "youtube-frame.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_end"
+    }
+  ],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvhfWbEu322bcfhTTm4uZ+kY+d1bLwp9+ztriXKkVThWI/Bqsha1zJOhAZ6NrayDrxIYvtMc8Aql/rpKFyrRAftowErSyxlhbsEw5CTeAF8P7QNNuCo2w1GBz0CpwD7L/7VYBm35ypomcpbda8AomiNgPIMwimjc1j34SuaYWa0zahCuL3njEG/PygIrHoXjKiNZcHdSXIKIqWXhD18/YiIAi2gsOXtzUnhyLKoWZho8TuOIHMozWyGzRugk6cJnxamI/7gBLSGoQnNyMnI2HULI7TIT8AULZRiw4csKdl5LA1NWlAO2QzuL45BPdjirEexf7hAejKAWfO6No5LvOiQIDAQAB"
+}

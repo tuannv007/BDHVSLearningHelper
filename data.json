@@ -1,0 +1,1520 @@
+{
+  "courses": [
+    {
+      "id": "bac-ninh-kns-2026",
+      "title": "Khóa học Bắc Ninh",
+      "code": "BN",
+      "path": "https://binhdanhocvuso.gov.vn/courses/course-v1:MOET+KNS-ND+2026-1-BacNinh/course/",
+      "sourceTitle": "PHỤ LỤC THỐNG KÊ CÂU HỎI ÔN TẬP BÌNH DÂN HỌC VỤ SỐ",
+      "sourceFile": "Tài liệu BDHVS.xlsx",
+      "notes": [
+        "Thời gian được hiểu là phút:giây (mm:ss); timeSeconds là số giây tương ứng.",
+        "Nguồn chỉ cung cấp số thứ tự, thời gian và đáp án; không có nội dung câu hỏi hoặc các lựa chọn.",
+        "Video có nhiều mốc câu hỏi được giữ trong cùng danh sách questions theo thứ tự trong nguồn."
+      ],
+      "navigation": {
+        "action": "openLessonVideo",
+        "outlineSelector": "#course-outline-block-tree"
+      },
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Bài 1",
+          "videos": [
+            {
+              "id": 1,
+              "title": "Video 1",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "06:41",
+                  "timeSeconds": 401,
+                  "content": null,
+                  "answer": "C"
+                }
+              ],
+              "tab": {
+                "index": 0,
+                "title": "1.1",
+                "blockId": "block-v1:MOET+KNS-ND+2026-1-BacNinh+type@vertical+block@ce36f09589bc4deeb2d4ceea5051979f"
+              }
+            },
+            {
+              "id": 2,
+              "title": "Video 2",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "06:55",
+                  "timeSeconds": 415,
+                  "content": null,
+                  "answer": "C"
+                }
+              ],
+              "tab": {
+                "index": 1,
+                "title": "1.2",
+                "blockId": "block-v1:MOET+KNS-ND+2026-1-BacNinh+type@vertical+block@f8f7a858fbef49bc8e8369ab88950c95"
+              }
+            },
+            {
+              "id": 3,
+              "title": "Video 3",
+              "tab": {
+                "index": 2,
+                "title": "1.3",
+                "blockId": "block-v1:MOET+KNS-ND+2026-1-BacNinh+type@vertical+block@b912e801cac54c198041f86d54d28fb6"
+              },
+              "playbackOnly": true,
+              "questions": []
+            }
+          ],
+          "test": {
+            "title": "Câu hỏi kiểm tra",
+            "questions": [
+              {
+                "id": 1,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 2,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 3,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 4,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 5,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 6,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 7,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 8,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 9,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 10,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 11,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 12,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 13,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 14,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 15,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 16,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 17,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 18,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 19,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 20,
+                "content": null,
+                "answer": "B"
+              }
+            ]
+          },
+          "outlineTitle": "BÀI 1: NHẬN THỨC VỀ CHUYỂN ĐỔI SỐ & TRÍ TUỆ NHÂN TẠO (AI)",
+          "navigation": {
+            "sectionId": "block-v1:MOET+KNS-ND+2026-1-BacNinh+type@chapter+block@c5f15af60d7f4011a2b7ae9d9843cc10",
+            "lectureId": "block-v1:MOET+KNS-ND+2026-1-BacNinh+type@sequential+block@36448549803941229d27b7dc22ea17b2",
+            "lectureTitle": "Video bài giảng 1",
+            "lecturePath": "https://binhdanhocvuso.gov.vn/courses/course-v1:MOET+KNS-ND+2026-1-BacNinh/jump_to/block-v1:MOET+KNS-ND+2026-1-BacNinh+type@sequential+block@36448549803941229d27b7dc22ea17b2"
+          }
+        },
+        {
+          "id": 2,
+          "title": "Bài 2",
+          "videos": [
+            {
+              "id": 1,
+              "title": "Video 1",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "05:41",
+                  "timeSeconds": 341,
+                  "content": null,
+                  "answer": "C"
+                }
+              ],
+              "tab": {
+                "index": 0,
+                "title": "2.1"
+              }
+            },
+            {
+              "id": 2,
+              "title": "Video 2",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "07:07",
+                  "timeSeconds": 427,
+                  "content": null,
+                  "answer": "B"
+                }
+              ],
+              "tab": {
+                "index": 1,
+                "title": "2.2"
+              }
+            },
+            {
+              "id": 3,
+              "title": "Video 3",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "05:50",
+                  "timeSeconds": 350,
+                  "content": null,
+                  "answer": "B"
+                }
+              ],
+              "tab": {
+                "index": 2,
+                "title": "2.3"
+              }
+            },
+            {
+              "id": 4,
+              "title": "Video 4",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "05:05",
+                  "timeSeconds": 305,
+                  "content": null,
+                  "answer": "C"
+                }
+              ],
+              "tab": {
+                "index": 3,
+                "title": "2.4"
+              }
+            }
+          ],
+          "test": {
+            "title": "Câu hỏi kiểm tra",
+            "questions": [
+              {
+                "id": 1,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 2,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 3,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 4,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 5,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 6,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 7,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 8,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 9,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 10,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 11,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 12,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 13,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 14,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 15,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 16,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 17,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 18,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 19,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 20,
+                "content": null,
+                "answer": "B"
+              }
+            ]
+          },
+          "outlineTitle": "BÀi 2: SỬ DỤNG THIẾT BỊ VÀ PHẦN MỀM",
+          "navigation": {
+            "sectionId": "block-v1:MOET+KNS-ND+2026-1-BacNinh+type@chapter+block@91d6b52eda3b45e2a91ee51e81b52dd1",
+            "lectureId": "block-v1:MOET+KNS-ND+2026-1-BacNinh+type@sequential+block@504eea32dfaa41599bc4368f65ba552e",
+            "lectureTitle": "Video bài giảng 2",
+            "lecturePath": "https://binhdanhocvuso.gov.vn/courses/course-v1:MOET+KNS-ND+2026-1-BacNinh/jump_to/block-v1:MOET+KNS-ND+2026-1-BacNinh+type@sequential+block@504eea32dfaa41599bc4368f65ba552e"
+          }
+        },
+        {
+          "id": 3,
+          "title": "Bài 3",
+          "videos": [
+            {
+              "id": 1,
+              "title": "Video 1",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "08:30",
+                  "timeSeconds": 510,
+                  "content": null,
+                  "answer": "C"
+                }
+              ],
+              "tab": {
+                "index": 0,
+                "title": "3.1"
+              }
+            },
+            {
+              "id": 2,
+              "title": "Video 2",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "07:21",
+                  "timeSeconds": 441,
+                  "content": null,
+                  "answer": "B"
+                }
+              ],
+              "tab": {
+                "index": 1,
+                "title": "3.2"
+              }
+            },
+            {
+              "id": 3,
+              "title": "Video 3",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "05:50",
+                  "timeSeconds": 350,
+                  "content": null,
+                  "answer": "B"
+                }
+              ],
+              "tab": {
+                "index": 2,
+                "title": "3.3"
+              }
+            }
+          ],
+          "test": {
+            "title": "Câu hỏi kiểm tra",
+            "questions": [
+              {
+                "id": 1,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 2,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 3,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 4,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 5,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 6,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 7,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 8,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 9,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 10,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 11,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 12,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 13,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 14,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 15,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 16,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 17,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 18,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 19,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 20,
+                "content": null,
+                "answer": "A"
+              }
+            ]
+          },
+          "outlineTitle": "BÀI 3: KHAI THÁC THÔNG TIN VÀ DỮ LIỆU SỐ",
+          "navigation": {
+            "sectionId": "block-v1:MOET+KNS-ND+2026-1-BacNinh+type@chapter+block@3a50e25a8462451c9071f8c0be04597f",
+            "lectureId": "block-v1:MOET+KNS-ND+2026-1-BacNinh+type@sequential+block@6d031faa6d2843148dac1d342dbf0bc9",
+            "lectureTitle": "Video bài giảng 3",
+            "lecturePath": "https://binhdanhocvuso.gov.vn/courses/course-v1:MOET+KNS-ND+2026-1-BacNinh/jump_to/block-v1:MOET+KNS-ND+2026-1-BacNinh+type@sequential+block@6d031faa6d2843148dac1d342dbf0bc9"
+          }
+        },
+        {
+          "id": 4,
+          "title": "Bài 4",
+          "videos": [
+            {
+              "id": 1,
+              "title": "Video 1",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "03:49",
+                  "timeSeconds": 229,
+                  "content": null,
+                  "answer": "C"
+                }
+              ],
+              "tab": {
+                "index": 0,
+                "title": "4.1"
+              }
+            },
+            {
+              "id": 2,
+              "title": "Video 2",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "04:31",
+                  "timeSeconds": 271,
+                  "content": null,
+                  "answer": "B"
+                }
+              ],
+              "tab": {
+                "index": 1,
+                "title": "4.2"
+              }
+            },
+            {
+              "id": 3,
+              "title": "Video 3",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "04:01",
+                  "timeSeconds": 241,
+                  "content": null,
+                  "answer": "A"
+                }
+              ],
+              "tab": {
+                "index": 2,
+                "title": "4.3"
+              }
+            },
+            {
+              "id": 4,
+              "title": "Video 4",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "02:53",
+                  "timeSeconds": 173,
+                  "content": null,
+                  "answer": "D"
+                }
+              ],
+              "tab": {
+                "index": 3,
+                "title": "4.4"
+              }
+            },
+            {
+              "id": 5,
+              "title": "Video 5",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "04:26",
+                  "timeSeconds": 266,
+                  "content": null,
+                  "answer": "C",
+                  "seekEarlySeconds": 10
+                }
+              ],
+              "tab": {
+                "index": 4,
+                "title": "4.5"
+              }
+            },
+            {
+              "id": 6,
+              "title": "Video 6",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "06:15",
+                  "timeSeconds": 375,
+                  "content": null,
+                  "answer": "B"
+                }
+              ],
+              "tab": {
+                "index": 5,
+                "title": "4.6"
+              }
+            }
+          ],
+          "test": {
+            "title": "Câu hỏi kiểm tra",
+            "questions": [
+              {
+                "id": 1,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 2,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 3,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 4,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 5,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 6,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 7,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 8,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 9,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 10,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 11,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 12,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 13,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 14,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 15,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 16,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 17,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 18,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 19,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 20,
+                "content": null,
+                "answer": "A"
+              }
+            ]
+          },
+          "outlineTitle": "BÀI 4: GIAO TIẾP VÀ HỢP TÁC TRÊN MÔI TRƯỜNG SỐ",
+          "navigation": {
+            "sectionId": "block-v1:MOET+KNS-ND+2026-1-BacNinh+type@chapter+block@cd614be6e4aa4b20a8b8ed0d4e013617",
+            "lectureId": "block-v1:MOET+KNS-ND+2026-1-BacNinh+type@sequential+block@c013120b9adc498a80407867a1fde771",
+            "lectureTitle": "Video bài giảng 4",
+            "lecturePath": "https://binhdanhocvuso.gov.vn/courses/course-v1:MOET+KNS-ND+2026-1-BacNinh/jump_to/block-v1:MOET+KNS-ND+2026-1-BacNinh+type@sequential+block@c013120b9adc498a80407867a1fde771"
+          }
+        },
+        {
+          "id": 5,
+          "title": "Bài 5",
+          "videos": [
+            {
+              "id": 1,
+              "title": "Video 1",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "20:01",
+                  "timeSeconds": 1201,
+                  "content": null,
+                  "answer": "C"
+                },
+                {
+                  "id": 2,
+                  "time": "24:33",
+                  "timeSeconds": 1473,
+                  "content": null,
+                  "answer": "D"
+                },
+                {
+                  "id": 3,
+                  "time": "22:08",
+                  "timeSeconds": 1328,
+                  "content": null,
+                  "answer": "D"
+                }
+              ],
+              "tab": {
+                "index": 0,
+                "title": "5.1"
+              }
+            },
+            {
+              "id": 2,
+              "title": "Video 2",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "08:58",
+                  "timeSeconds": 538,
+                  "content": null,
+                  "answer": "A"
+                },
+                {
+                  "id": 2,
+                  "time": "18:15",
+                  "timeSeconds": 1095,
+                  "content": null,
+                  "answer": "D"
+                }
+              ],
+              "tab": {
+                "index": 1,
+                "title": "5.2"
+              }
+            },
+            {
+              "id": 3,
+              "title": "Video 3",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "07:01",
+                  "timeSeconds": 421,
+                  "content": null,
+                  "answer": "A"
+                }
+              ],
+              "tab": {
+                "index": 2,
+                "title": "5.3"
+              }
+            },
+            {
+              "id": 4,
+              "title": "Video 4",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "06:47",
+                  "timeSeconds": 407,
+                  "content": null,
+                  "answer": "B"
+                }
+              ],
+              "tab": {
+                "index": 3,
+                "title": "5.4"
+              }
+            }
+          ],
+          "test": {
+            "title": "Câu hỏi kiểm tra",
+            "questions": [
+              {
+                "id": 1,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 2,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 3,
+                "content": null,
+                "answer": "D"
+              },
+              {
+                "id": 4,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 5,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 6,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 7,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 8,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 9,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 10,
+                "content": null,
+                "answer": "D"
+              },
+              {
+                "id": 11,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 12,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 13,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 14,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 15,
+                "content": null,
+                "answer": "D"
+              },
+              {
+                "id": 16,
+                "content": null,
+                "answer": "D"
+              },
+              {
+                "id": 17,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 18,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 19,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 20,
+                "content": null,
+                "answer": "B"
+              }
+            ]
+          },
+          "outlineTitle": "Bài 5: SÁNG TẠO NỘI DUNG SỐ TRONG ĐỜI SỐNG",
+          "navigation": {
+            "sectionId": "block-v1:MOET+KNS-ND+2026-1-BacNinh+type@chapter+block@dd9e050483fb423084a2063dc9d3efbb",
+            "lectureId": "block-v1:MOET+KNS-ND+2026-1-BacNinh+type@sequential+block@80fdce65513b4521a1c3fe8e47b3f284",
+            "lectureTitle": "Video bài giảng 5",
+            "lecturePath": "https://binhdanhocvuso.gov.vn/courses/course-v1:MOET+KNS-ND+2026-1-BacNinh/jump_to/block-v1:MOET+KNS-ND+2026-1-BacNinh+type@sequential+block@80fdce65513b4521a1c3fe8e47b3f284"
+          }
+        },
+        {
+          "id": 6,
+          "title": "Bài 6",
+          "videos": [
+            {
+              "id": 1,
+              "title": "Video 1",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "08:11",
+                  "timeSeconds": 491,
+                  "content": null,
+                  "answer": "C"
+                }
+              ],
+              "tab": {
+                "index": 0,
+                "title": "6.1"
+              }
+            },
+            {
+              "id": 2,
+              "title": "Video 2",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "14:50",
+                  "timeSeconds": 890,
+                  "content": null,
+                  "answer": "D"
+                },
+                {
+                  "id": 2,
+                  "time": "19:50",
+                  "timeSeconds": 1190,
+                  "content": null,
+                  "answer": "B"
+                }
+              ],
+              "tab": {
+                "index": 1,
+                "title": "6.2"
+              }
+            },
+            {
+              "id": 3,
+              "title": "Video 3",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "05:54",
+                  "timeSeconds": 354,
+                  "content": null,
+                  "answer": "D"
+                }
+              ],
+              "tab": {
+                "index": 2,
+                "title": "6.3"
+              }
+            },
+            {
+              "id": 4,
+              "title": "Video 4",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "05:36",
+                  "timeSeconds": 336,
+                  "content": null,
+                  "answer": "A",
+                  "seekEarlySeconds": 10
+                }
+              ],
+              "tab": {
+                "index": 3,
+                "title": "6.4"
+              }
+            }
+          ],
+          "test": {
+            "title": "Câu hỏi kiểm tra",
+            "questions": [
+              {
+                "id": 1,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 2,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 3,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 4,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 5,
+                "content": null,
+                "answer": "D"
+              },
+              {
+                "id": 6,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 7,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 8,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 9,
+                "content": null,
+                "answer": "D"
+              },
+              {
+                "id": 10,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 11,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 12,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 13,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 14,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 15,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 16,
+                "content": null,
+                "answer": "D"
+              },
+              {
+                "id": 17,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 18,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 19,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 20,
+                "content": null,
+                "answer": "C"
+              }
+            ]
+          },
+          "outlineTitle": "Bài 6: ĐẢM BẢO AN TOÀN VÀ BẢO MẬT THÔNG TIN, DỮ LIỆU TRÊN MÔI TRƯỜNG SỐ",
+          "navigation": {
+            "sectionId": "block-v1:MOET+KNS-ND+2026-1-BacNinh+type@chapter+block@f3ac033a323b47c78a43c89fdd502681",
+            "lectureId": "block-v1:MOET+KNS-ND+2026-1-BacNinh+type@sequential+block@d6dea959660244568d6ee93236493159",
+            "lectureTitle": "Video bài giảng 6",
+            "lecturePath": "https://binhdanhocvuso.gov.vn/courses/course-v1:MOET+KNS-ND+2026-1-BacNinh/jump_to/block-v1:MOET+KNS-ND+2026-1-BacNinh+type@sequential+block@d6dea959660244568d6ee93236493159"
+          }
+        },
+        {
+          "id": 7,
+          "title": "Bài 7",
+          "videos": [
+            {
+              "id": 1,
+              "title": "Video 1",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "09:53",
+                  "timeSeconds": 593,
+                  "content": null,
+                  "answer": "B"
+                }
+              ],
+              "tab": {
+                "index": 0,
+                "title": "7.1"
+              }
+            },
+            {
+              "id": 2,
+              "title": "Video 2",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "06:50",
+                  "timeSeconds": 410,
+                  "content": null,
+                  "answer": "C"
+                }
+              ],
+              "tab": {
+                "index": 1,
+                "title": "7.2"
+              }
+            },
+            {
+              "id": 3,
+              "title": "Video 3",
+              "questions": [
+                {
+                  "id": 1,
+                  "time": "06:03",
+                  "timeSeconds": 363,
+                  "content": null,
+                  "answer": "B"
+                }
+              ],
+              "tab": {
+                "index": 2,
+                "title": "7.3"
+              }
+            }
+          ],
+          "test": {
+            "title": "Câu hỏi kiểm tra",
+            "questions": [
+              {
+                "id": 1,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 2,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 3,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 4,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 5,
+                "content": null,
+                "answer": "D"
+              },
+              {
+                "id": 6,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 7,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 8,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 9,
+                "content": null,
+                "answer": "D"
+              },
+              {
+                "id": 10,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 11,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 12,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 13,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 14,
+                "content": null,
+                "answer": "D"
+              },
+              {
+                "id": 15,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 16,
+                "content": null,
+                "answer": "A"
+              },
+              {
+                "id": 17,
+                "content": null,
+                "answer": "B"
+              },
+              {
+                "id": 18,
+                "content": null,
+                "answer": "C"
+              },
+              {
+                "id": 19,
+                "content": null,
+                "answer": "D"
+              },
+              {
+                "id": 20,
+                "content": null,
+                "answer": "A"
+              }
+            ]
+          },
+          "outlineTitle": "Bài 7: GIẢI QUYẾT VẤN ĐỀ  BẰNG CÔNG NGHỆ SỐ",
+          "navigation": {
+            "sectionId": "block-v1:MOET+KNS-ND+2026-1-BacNinh+type@chapter+block@061d149d65cc438bb505f8ddf7bef1c6",
+            "lectureId": "block-v1:MOET+KNS-ND+2026-1-BacNinh+type@sequential+block@40cea4e47795418ba9f1e250ff2eac90",
+            "lectureTitle": "Video bài giảng 7",
+            "lecturePath": "https://binhdanhocvuso.gov.vn/courses/course-v1:MOET+KNS-ND+2026-1-BacNinh/jump_to/block-v1:MOET+KNS-ND+2026-1-BacNinh+type@sequential+block@40cea4e47795418ba9f1e250ff2eac90"
+          }
+        }
+      ],
+      "review": {
+        "title": "CÂU HỎI ÔN TẬP",
+        "navigation": {
+          "path": "https://binhdanhocvuso.gov.vn/courses/course-v1:MOET+KNS-ND+2026-1-BacNinh/jump_to/block-v1:MOET+KNS-ND+2026-1-BacNinh+type@sequential+block@dab77cd4437c487f883935ec1cd96efa",
+          "sequenceId": "block-v1:MOET+KNS-ND+2026-1-BacNinh+type@sequential+block@dab77cd4437c487f883935ec1cd96efa",
+          "examId": "289",
+          "tabIndex": 1
+        },
+        "questions": [
+          {
+            "id": 1,
+            "content": null,
+            "answer": "A"
+          },
+          {
+            "id": 2,
+            "content": null,
+            "answer": "B"
+          },
+          {
+            "id": 3,
+            "content": null,
+            "answer": "B"
+          },
+          {
+            "id": 4,
+            "content": null,
+            "answer": "C"
+          },
+          {
+            "id": 5,
+            "content": null,
+            "answer": "B"
+          },
+          {
+            "id": 6,
+            "content": null,
+            "answer": "C"
+          },
+          {
+            "id": 7,
+            "content": null,
+            "answer": "C"
+          },
+          {
+            "id": 8,
+            "content": null,
+            "answer": "B"
+          },
+          {
+            "id": 9,
+            "content": null,
+            "answer": "B"
+          },
+          {
+            "id": 10,
+            "content": null,
+            "answer": "C"
+          },
+          {
+            "id": 11,
+            "content": null,
+            "answer": "C"
+          },
+          {
+            "id": 12,
+            "content": null,
+            "answer": "C"
+          },
+          {
+            "id": 13,
+            "content": null,
+            "answer": "B"
+          },
+          {
+            "id": 14,
+            "content": null,
+            "answer": "B"
+          },
+          {
+            "id": 15,
+            "content": null,
+            "answer": "C"
+          },
+          {
+            "id": 16,
+            "content": null,
+            "answer": "C"
+          },
+          {
+            "id": 17,
+            "content": null,
+            "answer": "B"
+          },
+          {
+            "id": 18,
+            "content": null,
+            "answer": "C"
+          },
+          {
+            "id": 19,
+            "content": null,
+            "answer": "C"
+          },
+          {
+            "id": 20,
+            "content": null,
+            "answer": "A"
+          },
+          {
+            "id": 21,
+            "content": null,
+            "answer": "C"
+          },
+          {
+            "id": 22,
+            "content": null,
+            "answer": "D"
+          },
+          {
+            "id": 23,
+            "content": null,
+            "answer": "D"
+          },
+          {
+            "id": 24,
+            "content": null,
+            "answer": "B"
+          },
+          {
+            "id": 25,
+            "content": null,
+            "answer": "C"
+          },
+          {
+            "id": 26,
+            "content": null,
+            "answer": "D"
+          },
+          {
+            "id": 27,
+            "content": null,
+            "answer": "A"
+          },
+          {
+            "id": 28,
+            "content": null,
+            "answer": "C"
+          },
+          {
+            "id": 29,
+            "content": null,
+            "answer": "B"
+          },
+          {
+            "id": 30,
+            "content": null,
+            "answer": "D"
+          },
+          {
+            "id": 31,
+            "content": null,
+            "answer": "A"
+          },
+          {
+            "id": 32,
+            "content": null,
+            "answer": "D"
+          },
+          {
+            "id": 33,
+            "content": null,
+            "answer": "C"
+          },
+          {
+            "id": 34,
+            "content": null,
+            "answer": "C"
+          },
+          {
+            "id": 35,
+            "content": null,
+            "answer": "B"
+          }
+        ]
+      }
+    }
+  ]
+}
