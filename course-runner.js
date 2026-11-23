@@ -157,7 +157,9 @@
             throw new Error('Dữ liệu test phải có ID liên tiếp từ 1 và đáp án A–D: ' + lesson.title);
         }
         return [{ type: 'answerLessonTest', lesson, questions,
-            pageTitle: data.pageTitle || 'Ôn tập Module ' + lesson.id },
+            pageTitle: data.pageTitle || 'Ôn tập Module ' + lesson.id,
+            testPath: data.path || null,
+            sequenceId: data.sequenceId || null },
             { type: 'returnToOutline', lesson }];
     }
 
@@ -193,7 +195,7 @@
         // to the right "Ôn tập Module" page — no video, no navigation.
         const steps = testSteps({ id: lesson.id, title: lesson.title }, lesson.test);
         if (!steps.length) throw new Error(lesson.title + ' chưa có câu hỏi ôn tập.');
-        return [{ ...steps[0], manualPage: true }];
+        return [{ ...steps[0], manualPage: true, testPath: lesson.test?.path || null, sequenceId: lesson.test?.sequenceId || null }];
     }
 
     function buildSteps(course, selectedIds) {

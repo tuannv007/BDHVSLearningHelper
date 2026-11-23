@@ -33,9 +33,18 @@
     }
 
     function visible(element) {
-        return element.isConnected && element.getClientRects().length > 0 &&
-            getComputedStyle(element).visibility !== 'hidden' &&
-            !element.closest('[hidden], [aria-hidden="true"]');
+        if (!element || !element.isConnected) return false;
+        if (typeof element.closest === 'function' && element.closest('[hidden], [aria-hidden="true"]')) return false;
+        if (typeof getComputedStyle === 'function') {
+            try {
+                const style = getComputedStyle(element);
+                if (style.visibility === 'hidden' || style.display === 'none') return false;
+            } catch {}
+        }
+        if (element.tagName === 'INPUT' && (element.type === 'radio' || element.type === 'checkbox')) {
+            return true;
+        }
+        return element.getClientRects ? element.getClientRects().length > 0 : true;
     }
 
     function find(css, scope = document) {
@@ -85,10 +94,24 @@
 
     function click(element, signal) {
         throwIfAborted(signal);
-        if (!element || !visible(element) || element.disabled || element.getAttribute('aria-disabled') === 'true') {
+        if (!element || element.disabled || element.getAttribute('aria-disabled') === 'true') {
             throw new Error('Phần tử chưa sẵn sàng để click.');
         }
-        element.click();
+        try {
+            element.click();
+        } catch {}
+        if (element.tagName === 'INPUT' && (element.type === 'radio' || element.type === 'checkbox')) {
+            element.checked = true;
+            try {
+                element.dispatchEvent(new Event('change', { bubbles: true }));
+                element.dispatchEvent(new Event('input', { bubbles: true }));
+            } catch {}
+            const label = (typeof element.closest === 'function' ? element.closest('label') : null) ||
+                (element.id && typeof document !== 'undefined' ? document.querySelector?.('label[for="' + element.id + '"]') : null);
+            if (label && label !== element) {
+                try { label.click(); } catch {}
+            }
+        }
     }
 
     function questionSelectors(step) {

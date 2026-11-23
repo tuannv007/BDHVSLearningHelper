@@ -226,6 +226,10 @@
         }
         async function continueQuestion() {
             signal?.heartbeat?.();
+            if (typeof document !== 'undefined' && !document.querySelector('button.in-video-continue, button.continue')) {
+                log('[Bình dân học vụ số] ℹ️ Không có nút Continue riêng trên trang, tiếp tục.');
+                return;
+            }
             const found = await waitTolerant(() => {
                 const currentPanel = site.find(css.panel);
                 if (!currentPanel) return null;
@@ -248,6 +252,43 @@
             if (css.continue) await continueQuestion();
             return;
         }
+
+        // Kiểm tra xem tab hiện tại có phải là bài tập trắc nghiệm trực tiếp
+        const getDirectProblem = () => {
+            const seqContent = typeof document !== 'undefined' ? document.querySelector('#seq_content') : null;
+            if (!seqContent) return null;
+            let panel = seqContent.querySelector('.problems-wrapper');
+            if (panel && panel.querySelector('input[type="radio"]')) return panel;
+            const iframe = seqContent.querySelector('iframe');
+            try {
+                const doc = iframe?.contentDocument || iframe?.contentWindow?.document;
+                panel = doc?.querySelector?.('.problems-wrapper');
+                if (panel && panel.querySelector('input[type="radio"]')) return panel;
+            } catch {}
+            return null;
+        };
+        const directPanel = getDirectProblem();
+
+        if (directPanel) {
+            log('[Bình dân học vụ số] 📝 Tab câu hỏi trắc nghiệm: đang chọn đáp án ' + step.question.answer + '...');
+            const choiceVal = 'choice_' + (step.question.answer.charCodeAt(0) - 65);
+            const radio = directPanel.querySelector(`input[type="radio"][value="${choiceVal}"]`);
+            if (radio) {
+                site.click(radio, signal);
+                radio.checked = true;
+                radio.dispatchEvent(new Event('change', { bubbles: true }));
+                log('[Bình dân học vụ số] 👉 Đã chọn đáp án: ' + step.question.answer);
+            }
+            await site.delay(300, signal);
+            const submitBtn = directPanel.querySelector('button.submit, .submit-attempt-container button');
+            if (submitBtn && !submitBtn.disabled) {
+                site.click(submitBtn, signal);
+                log('[Bình dân học vụ số] 📤 Đã bấm Gửi xác nhận đáp án ' + step.question.answer);
+            }
+            await site.delay(500, signal);
+            return;
+        }
+
         await withPlayer(step, signal, async player => {
             if (!css || !site.find(css.panel)) {
                 log('[Bình dân học vụ số] ⏳ Đang phát video đến mốc ' + (step.question?.time || step.question?.timeSeconds + 's') + '...');
@@ -257,9 +298,21 @@
             signal?.heartbeat?.();
 
             log('[Bình dân học vụ số] 📋 Đã thấy bảng câu hỏi tại ' + step.question.time);
-            const panel = await site.waitFor(() => site.find(css.panel), signal, 'câu hỏi tại ' + step.question.time);
+            const panel = await site.waitFor(() => {
+                const p = site.find(css.panel);
+                if (p) return p;
+                if (typeof document !== 'undefined') {
+                    return document.querySelector('#seq_content .in-video-problem, #seq_content .problems-wrapper');
+                }
+                return null;
+            }, signal, 'câu hỏi tại ' + step.question.time);
             signal?.heartbeat?.();
-            const opt = await site.waitFor(() => site.find(css.option, panel), signal, 'đáp án ' + step.question.answer);
+            const opt = await site.waitFor(() => {
+                const o = site.find(css.option, panel);
+                if (o) return o;
+                const choiceVal = 'choice_' + (step.question.answer.charCodeAt(0) - 65);
+                return typeof panel?.querySelector === 'function' ? panel.querySelector(`input[type="radio"][value="${choiceVal}"]`) : null;
+            }, signal, 'đáp án ' + step.question.answer);
             site.click(opt, signal);
             signal?.heartbeat?.();
 
@@ -287,8 +340,8 @@
             // Nộp đáp án
             if (css.submit) {
                 const submitBtn = await site.waitFor(() => {
-                    const currentPanel = site.find(css.panel);
-                    return currentPanel && site.find(css.submit, currentPanel);
+                    const currentPanel = site.find(css.panel) || panel;
+                    return currentPanel && (site.find(css.submit, currentPanel) || currentPanel.querySelector?.('button.submit, .submit-attempt-container button'));
                 }, signal, 'nút xác nhận đáp án');
                 site.click(submitBtn, signal);
                 log('[Bình dân học vụ số] 📤 Đã bấm Gửi xác nhận đáp án ' + step.question.answer);
@@ -333,6 +386,16 @@
         }
         if (step.type === 'openVideo') return CourseActions.openVideoTab(step, signal);
         if (step.type === 'skipVideoToEnd') {
+            const html5Video = typeof document !== 'undefined' ? document.querySelector('#seq_content video') : null;
+            if (html5Video) {
+                html5Video.muted = true;
+                try { await html5Video.play(); } catch {}
+                if (Number.isFinite(html5Video.duration) && html5Video.duration > 0) {
+                    html5Video.currentTime = html5Video.duration - 0.5;
+                }
+                log('[Bình dân học vụ số] ⏩ Đã tua video HTML5 về cuối.');
+                return;
+            }
             return withPlayer(step, signal, player => CourseActions.skipVideoToEnd(player, signal));
         }
         if (step.type === 'answerQuestion') return answerQuestion(step, signal);
@@ -467,8 +530,8 @@
             return;
         }
 
-        // Nếu đã dừng và không còn nhật ký nào thì ẩn panel
-        if (run?.status === 'stopped' && (!logHistory || logHistory.length === 0)) {
+        // Khi dừng (Stop) hoặc học xong thì tự đóng panel luôn
+        if (run?.status === 'stopped' || run?.status === 'completed') {
             const existing = document.getElementById('bdhvs-history-panel');
             if (existing) existing.remove();
             return;

@@ -13,7 +13,7 @@
         const panelId = tab.getAttribute('aria-controls');
         if (!panelId) throw new Error('Tab video thiếu aria-controls.');
         const panel = site.find('#' + CSS.escape(panelId));
-        return panel && site.find('.tc-wrapper', panel);
+        return panel && (site.find('.tc-wrapper', panel) || panel);
     }
     const log = (...args) => { if (typeof console !== 'undefined' && typeof console.log === 'function') console.log(...args); };
     async function openVideoTab(step, signal) {
@@ -35,11 +35,13 @@
         const result = await site.waitFor(() => {
             const current = container(step);
             if (!current) return null;
-            const iframe = current.querySelector('iframe');
-            if (!iframe) return null;
-            return wasSelected || current !== old || iframe !== oldFrame || iframe.src !== oldSrc ? current : null;
-        }, signal, 'player mới của tab ' + step.video.tab.title);
-        log('[Bình dân học vụ số] ✔️ Player của tab ' + (step.video.tab?.title || step.video.title) + ' đã tải xong');
+            const iframe = current.querySelector?.('iframe');
+            if (iframe) {
+                return wasSelected || current !== old || iframe !== oldFrame || iframe.src !== oldSrc ? current : null;
+            }
+            return target.getAttribute('aria-selected') === 'true' ? current : null;
+        }, signal, 'nội dung của tab ' + step.video.tab.title);
+        log('[Bình dân học vụ số] ✔️ Nội dung của tab ' + (step.video.tab?.title || step.video.title) + ' đã tải xong');
         try { result.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch {}
         return result;
     }

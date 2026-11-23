@@ -61,6 +61,7 @@
         }
         player.muted = true;
         await player.play();
+        signal?.heartbeat?.();
         let ready = await waitForState(player, signal, state => state.ready && state.duration > 0, 'thời lượng video', 30000);
         const videoLabel = [step.lesson?.title, step.video?.title].filter(Boolean).join(' / ') || 'Video';
         log('[Bình dân học vụ số] 🎬 ' + videoLabel + ': thời lượng ' + Math.round(ready.duration) + 's');
@@ -72,9 +73,11 @@
             root.CourseSite.throwIfAborted(signal);
             try {
                 await player.seek(0);
+                signal?.heartbeat?.();
                 ready = await player.getState();
                 if (ready.paused && !questionVisible()) {
                     await player.play();
+                    signal?.heartbeat?.();
                     ready = await player.getState();
                 }
             } catch (error) {
@@ -96,8 +99,10 @@
         root.CourseSite.throwIfAborted(signal);
         log('[Bình dân học vụ số] ⏩ Đang tua video đến ' + step.seekSeconds + 's (mốc câu hỏi ' + (step.question.time || step.question.timeSeconds + 's') + ')...');
         await seekWithRetry(player, signal, step.seekSeconds);
+        signal?.heartbeat?.();
         const afterSeek = await player.getState();
         if (afterSeek.paused && !questionVisible()) await player.play();
+        signal?.heartbeat?.();
         const reached = await waitForState(player, signal,
             state => questionVisible() || state.currentTime >= step.question.timeSeconds - 0.3,
             'mốc câu hỏi ' + (step.question.time || step.question.timeSeconds + 's'));
@@ -106,6 +111,7 @@
     }
     async function skipVideoToEnd(player, signal) {
         await player.play();
+        signal?.heartbeat?.();
         const ready = await waitForState(player, signal, state => state.ready && state.duration > 0, 'thời lượng video', 30000);
         log('[Bình dân học vụ số] 🎬 Video không câu hỏi: tua tới cuối video...');
         const started = await waitBeforeSeek(player, signal, ready);
@@ -113,7 +119,9 @@
         root.CourseSite.throwIfAborted(signal);
         // Leave the last second to play naturally, so ended/completion events can fire.
         await seekWithRetry(player, signal, Math.max(0, ready.duration - 1));
+        signal?.heartbeat?.();
         if ((await player.getState()).paused) await player.play();
+        signal?.heartbeat?.();
         const endedState = await waitForState(player, signal, state => state.ended, 'video phát hết', 30000);
         log('[Bình dân học vụ số] ✔️ Video đã phát hết (ended)');
         return endedState;
@@ -121,7 +129,11 @@
     async function waitBeforeSeek(player, signal, ready, questionVisible = () => false) {
         // currentTime can jump when YouTube restores a saved position. Require
         // five wall-clock seconds as well, not just a five-second media delta.
+        // Notify the stall watchdog before and after the flat delay so it does
+        // not fire during a perfectly normal 5-second pre-seek wait.
+        signal?.heartbeat?.();
         await root.CourseSite.delay(5000, signal);
+        signal?.heartbeat?.();
         const startTime = ready.currentTime;
         return waitForState(player, signal, state => questionVisible() || state.ended ||
             (!state.paused && state.currentTime - startTime >= 5), 'video chạy 5 giây trước khi tua');

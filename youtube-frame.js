@@ -29,7 +29,7 @@
     // busy-polling fast on a weak machine. 300ms (was 100ms) still confirms
     // play/seek within a fraction of a second, which nothing here needs to
     // be tighter than, while cutting these wake-ups to a third.
-    async function waitFor(probe, signal, label, timeoutMs = 15000) {
+    async function waitFor(probe, signal, label, timeoutMs = 45000) {
         const end = Date.now() + timeoutMs;
         while (Date.now() < end) {
             check(signal);
